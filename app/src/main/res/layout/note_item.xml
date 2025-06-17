@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/titleTextView"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Note Title" />
 
         <TextView
             android:id="@+id/descTextView"
@@ -21,7 +26,29 @@
             android:layout_marginTop="4dp"
             android:textSize="14sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="Description goes here..." />
+
+        <ImageView
+            android:id="@+id/editIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_edit"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="Edit"
+            android:layout_marginEnd="4dp"/>
+
+        <ImageView
+            android:id="@+id/deleteIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_delete"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/editIcon"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Delete"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

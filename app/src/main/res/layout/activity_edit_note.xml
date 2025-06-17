@@ -5,12 +5,38 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- Horizontal layout for "ADD NOTE" and check button -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ADD NOTE"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check"
+            android:contentDescription="Save Note" />
+    </LinearLayout>
+
+    <!-- Title EditText -->
     <EditText
         android:id="@+id/titleEditText"
         android:hint="Title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:elevation="6dp" />
 
+    <!-- Description EditText -->
     <EditText
         android:id="@+id/descEditText"
         android:hint="Description"
@@ -18,13 +44,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="top"
-        android:inputType="textMultiLine" />
-
-    <ImageView
-        android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_check"
-        android:layout_gravity="end"/>
-
+        android:inputType="textMultiLine"
+        android:elevation="6dp"/>
 </LinearLayout>

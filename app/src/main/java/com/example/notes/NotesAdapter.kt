@@ -7,7 +7,8 @@ import com.example.notes.databinding.NoteItemBinding
 
 class NotesAdapter(
     private val notesList: List<Note>,
-    private val onItemClick: (Note) -> Unit
+    private val onItemClick: (Note) -> Unit,
+    private val onDeleteClick: (Note) -> Unit
 ): RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
     inner class NoteViewHolder(val binding: NoteItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -21,7 +22,8 @@ class NotesAdapter(
         holder.binding.titleTextView.text = note.title
         holder.binding.descTextView.text = note.desciption
         holder.itemView.setOnClickListener { onItemClick(note) }
-
+        holder.binding.editIcon.setOnClickListener { onItemClick(note) }
+        holder.binding.deleteIcon.setOnClickListener { onDeleteClick(note) }
     }
 
     override fun getItemCount() = notesList.size

@@ -1,5 +1,7 @@
 package com.example.notes
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.notes.databinding.ActivityEditNoteBinding
@@ -21,7 +23,15 @@ class EditNoteActivity : AppCompatActivity() {
             binding.descEditText.setText(noteDesc)
         }
         binding.saveBtn.setOnClickListener {
-            val noteText = binding.
+            val title = binding.titleEditText.text.toString()
+            val desc = binding.descEditText.text.toString()
+            val resultIntent = Intent().apply {
+                putExtra("noteTitle", title)
+                putExtra("noteDesc", desc)
+                putExtra("noteId", noteId) // optional: if you're editing
+            }
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
         }
     }
 
